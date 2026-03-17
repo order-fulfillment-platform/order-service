@@ -1,5 +1,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
+
 [![CI][ci-shield]][ci-url]
+
 <br />
 <div align="center">
 <h3 align="center">Order Service</h3>
