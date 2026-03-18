@@ -15,6 +15,7 @@ import com.ofp.orderservice.dto.CreateOrderRequest;
 import com.ofp.orderservice.entity.Order;
 import com.ofp.orderservice.service.OrderService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,7 +28,7 @@ public class OrderController {
 	private final OrderService orderService;
 
 	@PostMapping
-	public ResponseEntity<Order> createOrder(@RequestBody CreateOrderRequest request) {
+	public ResponseEntity<Order> createOrder(@Valid @RequestBody CreateOrderRequest request) {
 		log.info("Received create order request for customer {}", request.getCustomerId());
 		Order order = orderService.createOrder(request);
 		return ResponseEntity.status(HttpStatus.CREATED).body(order);
