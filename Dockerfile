@@ -9,6 +9,6 @@ RUN mvn package -DskipTests
 # Stage 2 - Runtime
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /pp
-COPY target/order-service-0.0.1-SNAPSHOT.jar app.jar
+COPY target/order-service-1.0.0.jar app.jar
 EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "app.jar"]
